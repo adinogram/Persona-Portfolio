@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { TerminalHero } from "@/components/home/TerminalHero";
 import { About } from "@/components/home/About";
 import { Skills } from "@/components/home/Skills";
+import { Experience } from "@/components/home/Experience";
 import { Projects } from "@/components/home/Projects";
 import { Contact } from "@/components/home/Contact";
 import { motion, useScroll, useSpring } from "motion/react";
@@ -34,6 +35,7 @@ export default function App() {
         
         <div className="relative z-10 bg-background">
           <About />
+          <Experience />
           <Skills />
           <Projects />
           <Contact />

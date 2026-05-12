@@ -61,18 +61,22 @@ export const Skills = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className={`p-6 rounded-2xl border border-border bg-gradient-to-br ${category.color} backdrop-blur-sm group`}
+              whileHover={{ 
+                y: -10, 
+                backgroundColor: "rgba(255,255,255,0.05)",
+                boxShadow: "0 20px 40px -15px rgba(0,0,0,0.5)"
+              }}
+              className={`p-6 rounded-2xl border border-border bg-gradient-to-br ${category.color} backdrop-blur-sm group transition-all duration-300`}
             >
-              <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center mb-6 border border-border group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center mb-6 border border-border group-hover:bg-primary/20 transition-colors">
                 {category.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4">{category.title}</h3>
-              <ul className="space-y-2">
+              <h3 className="text-xl font-bold mb-4 tracking-tight">{category.title}</h3>
+              <ul className="space-y-3">
                 {category.skills.map((skill, sIdx) => (
-                  <li key={sIdx} className="text-sm text-muted-foreground flex items-center gap-2">
-                    <div className="w-1 h-1 rounded-full bg-primary" />
-                    {skill}
+                  <li key={sIdx} className="text-sm text-muted-foreground flex items-center gap-3 group/item">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary group-hover/item:scale-125 transition-all" />
+                    <span className="group-hover/item:text-foreground transition-colors">{skill}</span>
                   </li>
                 ))}
               </ul>

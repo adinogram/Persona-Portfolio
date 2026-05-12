@@ -65,19 +65,19 @@ export const TerminalHero = () => {
           </div>
 
           {/* Body */}
-          <div className="p-8 md:p-14 font-mono text-xl md:text-3xl lg:text-4xl text-white leading-tight min-h-[320px]">
-            <div className="text-sm opacity-40 mb-6 select-none font-light">
+          <div className="p-8 md:p-14 font-mono text-xl md:text-3xl lg:text-4xl text-white leading-tight min-h-[360px] flex flex-col justify-center">
+            <div className="text-sm opacity-40 mb-8 select-none font-light border-l-2 border-white/10 pl-4 py-1">
               Last login: {new Date().toDateString()} on ttys001<br />
-              Personal-MBP:~ oluwatoseen$
+              Personal-MBP:~ oluwatoseen$ <span className="text-[#FF98E2]"># Initializing vision...</span>
             </div>
-            <div className="flex flex-wrap gap-x-4 items-center">
-              <span className="text-[#B085FF] font-bold">❯</span>
-              <span className="break-all whitespace-pre-wrap font-medium">
+            <div className="flex flex-wrap gap-x-4 items-baseline">
+              <span className="text-[#B085FF] font-bold text-2xl md:text-4xl">❯</span>
+              <span className="break-all whitespace-pre-wrap font-medium tracking-tight">
                 {text}
                 <motion.span 
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{ repeat: Infinity, duration: 1 }}
-                  className="inline-block w-3 h-[1.1em] bg-[#FF98E2] ml-1 align-middle"
+                  className="inline-block w-3 md:w-4 h-[1.1em] bg-[#FF98E2] ml-1 align-middle"
                 />
               </span>
             </div>

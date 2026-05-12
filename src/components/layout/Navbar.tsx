@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button";
 export const Navbar = () => {
   const navItems = [
     { icon: <User className="w-5 h-5" />, label: "Profile", href: "#about" },
+    { icon: <Briefcase className="w-5 h-5" />, label: "Work", href: "#experience" },
     { icon: <Globe className="w-5 h-5" />, label: "Skills", href: "#skills" },
-    { icon: <Briefcase className="w-5 h-5" />, label: "Projects", href: "#projects" },
-    { icon: <Heart className="w-5 h-5" />, label: "Interests", href: "#interests" },
-    { icon: <Monitor className="w-5 h-5" />, label: "Terminal", href: "#hero" },
+    { icon: <Monitor className="w-5 h-5" />, label: "Dev", href: "#projects" },
   ];
 
   return (
