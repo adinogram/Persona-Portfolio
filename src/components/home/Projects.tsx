@@ -77,9 +77,11 @@ export const Projects = () => {
               A curated selection of my recent engineering projects, ranging from decentralized finance protocols to robust enterprise applications.
             </p>
           </motion.div>
-          <Button variant="outline" className="rounded-full px-8">
-            View All Projects
-          </Button>
+          <a href="#contact">
+            <Button variant="outline" className="rounded-full px-8 cursor-pointer">
+              View All Projects
+            </Button>
+          </a>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">
@@ -89,9 +91,14 @@ export const Projects = () => {
               layout
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
+              whileHover={expandedId === project.id ? {} : { 
+                y: -10,
+                scale: 1.01,
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className={`group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-primary/5 transition-all cursor-pointer ${
+              className={`group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all cursor-pointer ${
                 expandedId === project.id ? "lg:col-span-2 lg:row-span-2 ring-2 ring-primary/20" : ""
               }`}
               onClick={() => toggleExpand(project.id)}

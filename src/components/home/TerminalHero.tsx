@@ -18,15 +18,15 @@ export const TerminalHero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-[#0A0A0A]"
+      className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-background"
     >
       {/* Background Pattern - Fingerprint/Contour Effect */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 50% 50%, transparent 0%, #0A0A0A 80%), 
-              repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px)`,
+            backgroundImage: `radial-gradient(circle at 50% 50%, transparent 0%, var(--background) 80%), 
+              repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 40px, currentColor 40px, currentColor 41px)`,
           }}
         />
         <motion.div 
@@ -52,9 +52,9 @@ export const TerminalHero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10 w-full max-w-4xl px-4"
       >
-        <div className="bg-[#121212]/90 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden shadow-[0_0_80px_-15px_rgba(0,0,0,0.8)]">
+        <div className="bg-black/95 backdrop-blur-xl rounded-2xl border border-white/10 overflow-hidden shadow-[0_0_80px_-15px_rgba(0,0,0,0.8)]">
           {/* Header */}
-          <div className="bg-[#1A1A1A] px-4 py-3 flex items-center justify-between border-b border-white/5">
+          <div className="bg-zinc-900 px-4 py-3 flex items-center justify-between border-b border-white/5">
             <div className="flex gap-2">
               <div className="w-3 h-3 rounded-full bg-[#FF5F56] opacity-80" />
               <div className="w-3 h-3 rounded-full bg-[#FFBD2E] opacity-80" />
@@ -90,13 +90,13 @@ export const TerminalHero = () => {
           transition={{ delay: 1, duration: 1 }}
           className="mt-12 text-center flex flex-col items-center gap-6"
         >
-          <div className="px-4 py-1 rounded-full border border-white/5 bg-white/5 text-[10px] uppercase tracking-[0.3em] text-white/40 font-semibold backdrop-blur-sm">
+          <div className="px-4 py-1 rounded-full border border-border bg-muted text-[10px] uppercase tracking-[0.3em] text-muted-foreground font-semibold backdrop-blur-sm">
             Full Stack & Blockchain Engineer
           </div>
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="w-px h-16 bg-gradient-to-b from-[#B085FF] to-transparent opacity-50"
+            className="w-px h-16 bg-gradient-to-b from-primary to-transparent opacity-50"
           />
         </motion.div>
       </motion.div>

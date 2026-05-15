@@ -96,6 +96,10 @@
   * {
     @apply border-border outline-ring/50;
   }
+html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-primary-foreground;
   }
