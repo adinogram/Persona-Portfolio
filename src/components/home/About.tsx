@@ -27,6 +27,20 @@ export const About = () => {
               </Badge>
             ))}
           </div>
+
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border pt-12">
+            {[
+              { label: "Experience", value: "4+ Yrs" },
+              { label: "Projects", value: "24+" },
+              { label: "Commits", value: "2.1k" },
+              { label: "Contracts", value: "112" }
+            ].map((stat, i) => (
+              <div key={i} className="space-y-1">
+                <div className="text-3xl font-bold font-mono tracking-tighter text-primary">{stat.value}</div>
+                <div className="text-[10px] uppercase font-mono tracking-[0.2em] text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div

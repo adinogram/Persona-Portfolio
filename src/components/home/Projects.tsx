@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "motion/react";
-import { ExternalLink, Github, ChevronDown, ChevronUp, Code, Zap, Shield } from "lucide-react";
+import { ExternalLink, Github, ChevronDown, ChevronUp, Code, Zap, Shield, Filter } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 const projects = [
   {
@@ -18,8 +18,8 @@ const projects = [
     detailedTech: ["Solidity", "TypeScript", "React", "Ether.js", "Hardhat", "The Graph"],
     image: "https://picsum.photos/seed/defi/800/600",
     tags: ["Solidity", "TypeScript", "React", "Ether.js"],
-    github: "#",
-    live: "#"
+    github: "https://github.com/adinogram/defi-yield",
+    live: "https://defi-yield-demo.vercel.app"
   },
   {
     id: "erp",
@@ -34,8 +34,8 @@ const projects = [
     detailedTech: ["Node.js", "PostgreSQL", "React", "Docker", "Redis", "D3.js"],
     image: "https://picsum.photos/seed/erp/800/600",
     tags: ["Node.js", "PostgreSQL", "React", "Docker"],
-    github: "#",
-    live: "#"
+    github: "https://github.com/adinogram/erp-system",
+    live: "https://erp-enterprise.demo"
   },
   {
     id: "nft",
@@ -50,59 +50,90 @@ const projects = [
     detailedTech: ["Hardhat", "Next.js", "Tailwind", "IPFS", "Polygon", "Alchemy"],
     image: "https://picsum.photos/seed/nft/800/600",
     tags: ["Hardhat", "Next.js", "Tailwind", "IPFS"],
-    github: "#",
-    live: "#"
+    github: "https://github.com/adinogram/nft-marketplace",
+    live: "https://nft-engine.demo"
   }
 ];
 
 export const Projects = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    projects.forEach(p => p.tags.forEach(t => tags.add(t)));
+    return ["All", ...Array.from(tags).sort()];
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "All") return projects;
+    return projects.filter(p => p.tags.includes(activeFilter));
+  }, [activeFilter]);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
   };
 
   return (
-    <section id="projects" className="py-24 px-4">
+    <section id="projects" className="py-24 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8">
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="flex-1"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Selected Works</h2>
-            <p className="text-muted-foreground max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Selected Works</h2>
+            <p className="text-muted-foreground max-w-xl leading-relaxed">
               A curated selection of my recent engineering projects, ranging from decentralized finance protocols to robust enterprise applications.
             </p>
           </motion.div>
-          <a href="#contact">
-            <Button variant="outline" className="rounded-full px-8 cursor-pointer">
-              View All Projects
-            </Button>
-          </a>
+          
+          <div className="flex flex-wrap gap-2">
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                onClick={() => {
+                  setActiveFilter(tag);
+                  setExpandedId(null);
+                }}
+                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all border ${
+                  activeFilter === tag
+                    ? "bg-primary text-black border-primary font-bold shadow-lg shadow-primary/20"
+                    : "bg-card border-border text-muted-foreground hover:border-primary/40"
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          {projects.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              whileHover={expandedId === project.id ? {} : { 
-                y: -10,
-                scale: 1.01,
-                transition: { duration: 0.3, ease: "easeOut" }
-              }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className={`group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all cursor-pointer ${
-                expandedId === project.id ? "lg:col-span-2 lg:row-span-2 ring-2 ring-primary/20" : ""
-              }`}
-              onClick={() => toggleExpand(project.id)}
-            >
+        <motion.div 
+          layout 
+          className="grid lg:grid-cols-3 gap-8 items-start"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, idx) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                whileHover={expandedId === project.id ? {} : { 
+                  y: -10,
+                  scale: 1.01,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                transition={{ duration: 0.4 }}
+                className={`group flex flex-col bg-card border border-border rounded-2xl overflow-hidden hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all cursor-pointer ${
+                  expandedId === project.id ? "lg:col-span-2 lg:row-span-2 ring-2 ring-primary/20" : ""
+                }`}
+                onClick={() => toggleExpand(project.id)}
+              >
               <motion.div layout className="aspect-[16/9] lg:aspect-auto lg:h-64 overflow-hidden relative">
                 <img 
                   src={project.image} 
@@ -111,12 +142,32 @@ export const Projects = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                  <Button size="icon" variant="secondary" className="rounded-full shadow-lg" onClick={(e) => e.stopPropagation()}>
-                    <Github className="w-5 h-5" />
-                  </Button>
-                  <Button size="icon" variant="secondary" className="rounded-full shadow-lg" onClick={(e) => e.stopPropagation()}>
-                    <ExternalLink className="w-5 h-5" />
-                  </Button>
+                  {project.github && project.github !== "#" && (
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={(e) => e.stopPropagation()}
+                      className="transition-transform hover:scale-110"
+                    >
+                      <Button size="icon" variant="secondary" className="rounded-full shadow-lg">
+                        <Github className="w-5 h-5" />
+                      </Button>
+                    </a>
+                  )}
+                  {project.live && project.live !== "#" && (
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={(e) => e.stopPropagation()}
+                      className="transition-transform hover:scale-110"
+                    >
+                      <Button size="icon" variant="secondary" className="rounded-full shadow-lg">
+                        <ExternalLink className="w-5 h-5" />
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </motion.div>
               
@@ -193,7 +244,8 @@ export const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

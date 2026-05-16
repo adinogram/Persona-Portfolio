@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { User, Globe, Briefcase, Monitor, Sun, Moon } from "lucide-react";
+import { User, Globe, Briefcase, Monitor, Sun, Moon, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface NavbarProps {
@@ -11,6 +11,7 @@ export const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   const navItems = [
     { icon: <User className="w-5 h-5" />, label: "Profile", href: "#about" },
     { icon: <Briefcase className="w-5 h-5" />, label: "Work", href: "#experience" },
+    { icon: <Zap className="w-5 h-5" />, label: "Services", href: "#services" },
     { icon: <Globe className="w-5 h-5" />, label: "Skills", href: "#skills" },
     { icon: <Monitor className="w-5 h-5" />, label: "Dev", href: "#projects" },
   ];
