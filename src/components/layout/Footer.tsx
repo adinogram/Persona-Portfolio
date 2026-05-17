@@ -9,9 +9,17 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           <div className="md:col-span-2 space-y-6">
-            <div className="text-2xl font-bold font-mono tracking-tighter">OLOYERINDE.DEV</div>
+            <div className="flex items-center gap-1 group">
+              <div className="font-mono font-black text-3xl tracking-tighter flex items-center gap-0.5">
+                <span className="text-primary">A</span>
+                <span>D</span>
+                <span className="text-primary/80">I</span>
+                <span>N</span>
+                <span className="text-primary/60">O</span>
+              </div>
+            </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed">
-              Designing and building high-performance digital experiences at the intersection of Web3, Cloud, and polished User Interfaces.
+              Premium engineering solutions. Specializing in Web3, Cloud Architecture, and Crafting Fluid Digital Interfaces.
             </p>
             <div className="flex gap-4">
               {[

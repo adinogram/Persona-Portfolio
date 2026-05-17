@@ -5,13 +5,14 @@
 
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
-import { TerminalHero } from "@/components/home/TerminalHero";
+import { Hero } from "@/components/home/TerminalHero";
 import { About } from "@/components/home/About";
 import { Services } from "@/components/home/Services";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Skills } from "@/components/home/Skills";
 import { Experience } from "@/components/home/Experience";
 import { Projects } from "@/components/home/Projects";
+import { GithubIntelligence } from "@/components/home/GithubIntelligence";
 import { Contact } from "@/components/home/Contact";
 import { Footer } from "@/components/layout/Footer";
 import { motion, useScroll, useSpring } from "motion/react";
@@ -51,7 +52,7 @@ export default function App() {
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       
       <main className="flex flex-col">
-        <TerminalHero />
+        <Hero />
         
         <div className="relative z-10 bg-background">
           <About />
@@ -59,6 +60,7 @@ export default function App() {
           <Services />
           <Skills />
           <Projects />
+          <GithubIntelligence />
           <Testimonials />
           <Contact />
         </div>

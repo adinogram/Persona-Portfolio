@@ -17,8 +17,9 @@ export const About = () => {
             Engineering the future of Web3 and scalable apps.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            I'm Oluwatosin Oloyerinde, a full-stack and blockchain developer dedicated to creating impactful digital experiences. 
-            My journey in software engineering is driven by a deep curiosity for complex systems and a commitment to elegant, secure code.
+            My name is Oloyerinde Oluwatosin Joseph, though many know me as <span className="text-primary font-bold">Adino</span>. 
+            I'm a full-stack and blockchain developer dedicated to creating impactful digital experiences. 
+            My journey is driven by a relentless pursuit of technical excellence and a commitment to building products that matter.
           </p>
           <div className="flex flex-wrap gap-2">
             {["Innovator", "Full Stack", "Blockchain Expert", "Crypto Enthusiast"].map((tag) => (
@@ -30,7 +31,7 @@ export const About = () => {
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-border pt-12">
             {[
-              { label: "Experience", value: "4+ Yrs" },
+              { label: "Experience", value: "5+ Yrs" },
               { label: "Projects", value: "24+" },
               { label: "Commits", value: "2.1k" },
               { label: "Contracts", value: "112" }

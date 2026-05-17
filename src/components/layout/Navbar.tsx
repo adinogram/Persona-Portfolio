@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { User, Globe, Briefcase, Monitor, Sun, Moon, Zap } from "lucide-react";
+import { User, Globe, Briefcase, Monitor, Sun, Moon, Zap, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface NavbarProps {
@@ -14,15 +14,26 @@ export const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     { icon: <Zap className="w-5 h-5" />, label: "Services", href: "#services" },
     { icon: <Globe className="w-5 h-5" />, label: "Skills", href: "#skills" },
     { icon: <Monitor className="w-5 h-5" />, label: "Dev", href: "#projects" },
+    { icon: <Activity className="w-5 h-5" />, label: "Stats", href: "#github-intel" },
   ];
 
   return (
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 p-2 px-4 rounded-full bg-background/80 backdrop-blur-md border border-border shadow-2xl"
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 p-2 px-6 rounded-full bg-background/80 backdrop-blur-xl border border-border shadow-2xl"
       id="main-nav"
     >
+      <a href="#hero" className="flex items-center gap-1 group">
+        <div className="font-mono font-black text-xl tracking-tighter flex items-center gap-0.5">
+          <span className="text-primary">A</span>
+          <span className="group-hover:translate-x-0.5 transition-transform">D</span>
+          <span className="group-hover:translate-x-1 transition-transform text-primary/80">I</span>
+          <span className="group-hover:translate-x-1.5 transition-transform">N</span>
+          <span className="group-hover:translate-x-2 transition-transform text-primary/60">O</span>
+        </div>
+      </a>
+      <div className="w-px h-6 bg-border mx-2" />
       <div className="flex items-center gap-1">
         {navItems.map((item, index) => (
           <a
