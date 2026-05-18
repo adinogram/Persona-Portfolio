@@ -3,24 +3,40 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Hero } from "@/components/home/TerminalHero";
 import { About } from "@/components/home/About";
-import { Services } from "@/components/home/Services";
-import { Testimonials } from "@/components/home/Testimonials";
-import { Skills } from "@/components/home/Skills";
-import { Experience } from "@/components/home/Experience";
-import { Projects } from "@/components/home/Projects";
-import { GithubIntelligence } from "@/components/home/GithubIntelligence";
-import { Contact } from "@/components/home/Contact";
+import { Journey } from "@/components/home/Journey";
 import { Footer } from "@/components/layout/Footer";
+import { TosinAI } from "@/components/ai/TosinAI";
+import { RecruiterCTA } from "@/components/home/RecruiterCTA";
 import { motion, useScroll, useSpring } from "motion/react";
+
+// Lazy Loaded Sections for Performance
+const Experience = lazy(() => import("@/components/home/Experience").then(m => ({ default: m.Experience })));
+const Services = lazy(() => import("@/components/home/Services").then(m => ({ default: m.Services })));
+const Skills = lazy(() => import("@/components/home/Skills").then(m => ({ default: m.Skills })));
+const Projects = lazy(() => import("@/components/home/Projects").then(m => ({ default: m.Projects })));
+const GithubIntelligence = lazy(() => import("@/components/home/GithubIntelligence").then(m => ({ default: m.GithubIntelligence })));
+const Testimonials = lazy(() => import("@/components/home/Testimonials").then(m => ({ default: m.Testimonials })));
+const Contact = lazy(() => import("@/components/home/Contact").then(m => ({ default: m.Contact })));
+const BuildInPublic = lazy(() => import("@/components/home/BuildInPublic").then(m => ({ default: m.BuildInPublic })));
+const Vision = lazy(() => import("@/components/home/Vision").then(m => ({ default: m.Vision })));
+
+const LoadingSection = () => (
+  <div className="w-full h-[400px] flex items-center justify-center bg-background/50 animate-pulse">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 rounded-full border-2 border-primary/20 border-t-primary animate-spin" />
+      <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground">Syncing Modules...</span>
+    </div>
+  </div>
+);
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem("theme");
-    return saved ? saved === "dark" : true; // Default to dark as requested by the initial design
+    return saved ? saved === "dark" : true;
   });
 
   useEffect(() => {
@@ -56,17 +72,27 @@ export default function App() {
         
         <div className="relative z-10 bg-background">
           <About />
-          <Experience />
-          <Services />
-          <Skills />
-          <Projects />
-          <GithubIntelligence />
-          <Testimonials />
-          <Contact />
+          <Journey />
+          
+          <Suspense fallback={<LoadingSection />}>
+            <Experience />
+            <Vision />
+            <Services />
+            <BuildInPublic />
+            <Skills />
+            <Projects />
+            <GithubIntelligence />
+            <Testimonials />
+            <Contact />
+          </Suspense>
         </div>
       </main>
 
       <Footer />
+      
+      {/* Interactive Floating Layers */}
+      <TosinAI />
+      <RecruiterCTA />
     </div>
   );
 }

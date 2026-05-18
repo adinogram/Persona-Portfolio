@@ -1,6 +1,8 @@
 {
-  "name": "Adino | Full Stack Engineer & Blockchain Developer",
-  "description": "Premium developer portfolio of Adino (Oloyerinde Oluwatosin Joseph). Full Stack & Blockchain engineering at the intersection of Web3 and scalable systems.",
+  "name": "Adinogram Tosin | Full-Stack & Blockchain Architect",
+  "description": "Premium developer portfolio of Adinogram Tosin. Building impactful technology products in Web3, real estate, and agriculture.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

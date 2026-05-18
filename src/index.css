@@ -125,4 +125,18 @@ html {
             linear-gradient(to right, oklch(1 0 0 / 5%) 1px, transparent 1px),
             linear-gradient(to bottom, oklch(1 0 0 / 5%) 1px, transparent 1px);
     }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: oklch(var(--primary) / 20%);
+        border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: oklch(var(--primary) / 40%);
+    }
 }
