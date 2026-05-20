@@ -138,12 +138,11 @@ export const Hero = () => {
           </div>
 
           <div className="space-y-4">
-            <motion.h1 
+            <h1 
               className="text-7xl md:text-9xl font-black tracking-tighter leading-none"
             >
-              <span className="text-foreground">AD</span>
-              <span className="text-primary italic">INO</span>
-            </motion.h1>
+              <span className="text-foreground text-primary italic">JOSEPH.</span>
+            </h1>
             
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground/90">
@@ -177,8 +176,10 @@ export const Hero = () => {
                 View Projects <ArrowRight className="w-4 h-4" />
               </Button>
             </a>
-            <Button size="lg" variant="outline" className="rounded-full px-8 gap-2 border-border/50 hover:bg-muted">
-              <Download className="w-4 h-4" /> Download Resume
+            <Button size="lg" variant="outline" className="rounded-full px-8 gap-2 border-border/50 hover:bg-muted" asChild>
+              <a href="/resume.txt" download="Oloyerinde_Oluwatosin_Joseph_Resume.txt">
+                <Download className="w-4 h-4" /> Download Resume
+              </a>
             </Button>
             <div className="flex w-full sm:w-auto gap-2">
               <a href="#contact" className="flex-1 sm:flex-initial">

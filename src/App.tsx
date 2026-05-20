@@ -18,11 +18,8 @@ const Experience = lazy(() => import("@/components/home/Experience").then(m => (
 const Services = lazy(() => import("@/components/home/Services").then(m => ({ default: m.Services })));
 const Skills = lazy(() => import("@/components/home/Skills").then(m => ({ default: m.Skills })));
 const Projects = lazy(() => import("@/components/home/Projects").then(m => ({ default: m.Projects })));
-const GithubIntelligence = lazy(() => import("@/components/home/GithubIntelligence").then(m => ({ default: m.GithubIntelligence })));
 const Testimonials = lazy(() => import("@/components/home/Testimonials").then(m => ({ default: m.Testimonials })));
 const Contact = lazy(() => import("@/components/home/Contact").then(m => ({ default: m.Contact })));
-const BuildInPublic = lazy(() => import("@/components/home/BuildInPublic").then(m => ({ default: m.BuildInPublic })));
-const Vision = lazy(() => import("@/components/home/Vision").then(m => ({ default: m.Vision })));
 
 const LoadingSection = () => (
   <div className="w-full h-[400px] flex items-center justify-center bg-background/50 animate-pulse">
@@ -76,12 +73,9 @@ export default function App() {
           
           <Suspense fallback={<LoadingSection />}>
             <Experience />
-            <Vision />
             <Services />
-            <BuildInPublic />
             <Skills />
             <Projects />
-            <GithubIntelligence />
             <Testimonials />
             <Contact />
           </Suspense>

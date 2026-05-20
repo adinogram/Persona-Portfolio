@@ -68,14 +68,10 @@ export const BuildInPublic = () => {
     <section id="build-in-public" className="py-24 px-6 bg-[#030303] relative overflow-hidden border-t border-border/50">
       <div className="max-w-6xl mx-auto relative z-10">
         <header className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-primary">
-              <Construction className="w-5 h-5" />
-              <span className="text-xs font-mono tracking-[0.4em] uppercase font-bold">Live Stream // Public-04</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Build In Public</h2>
-            <p className="text-muted-foreground max-w-lg font-mono text-xs uppercase tracking-wider leading-relaxed">
-              Transparent logs of my engineering journey, failures, and constant evolution.
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Learning Log</h2>
+            <p className="text-muted-foreground max-w-lg font-mono text-[10px] uppercase tracking-wider leading-relaxed">
+              Transparent engineering journey and technical evolution.
             </p>
           </div>
 

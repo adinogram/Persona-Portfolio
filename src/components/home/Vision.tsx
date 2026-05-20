@@ -64,14 +64,10 @@ export const Vision = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-8">
-            <div className="flex items-center gap-2 text-primary">
-              <Compass className="w-5 h-5" />
-              <span className="text-xs font-mono tracking-[0.4em] uppercase font-bold">Strategic Horizon // Goal-01</span>
-            </div>
+          <div className="space-y-6">
             <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]">
-              Building The <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-purple-500">Multiverse.</span>
+              Future <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-purple-500">Roadmap.</span>
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
               My vision extends beyond code. I am architecting a future where technology, real estate, and agriculture converge to impact millions of lives globally.
@@ -146,7 +142,7 @@ export const Vision = () => {
             </p>
             <div className="flex items-center gap-4 pt-4">
               <div className="w-12 h-px bg-black" />
-              <span className="text-xs font-mono uppercase tracking-[0.4em] font-bold">The Vision Statement</span>
+              <span className="text-xs font-mono uppercase tracking-[0.2em] font-bold">The Vision</span>
             </div>
           </div>
         </div>

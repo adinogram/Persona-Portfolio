@@ -106,14 +106,10 @@ export const Skills = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <header className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-primary">
-              <Binary className="w-5 h-5" />
-              <span className="text-xs font-mono tracking-[0.3em] uppercase font-bold">Tech Ecosystem // Node Matrix</span>
-            </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Skill Intelligence</h2>
-            <p className="text-muted-foreground max-w-xl font-mono text-xs uppercase tracking-wider">
-              Interactive structural map of my engineering stack. Drag and hover to explore core proficiencies.
+          <div className="space-y-2">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Skill Map</h2>
+            <p className="text-muted-foreground max-w-xl font-mono text-[10px] uppercase tracking-wider">
+              Interactive map of my engineering stack. Drag and hover nodes to explore.
             </p>
           </div>
           

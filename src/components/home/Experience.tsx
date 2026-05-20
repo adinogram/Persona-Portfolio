@@ -1,27 +1,29 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
+import { FileDown, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const experiences = [
   {
-    company: "DeFi Solutions Int.",
-    role: "Senior Blockchain Engineer",
-    period: "2023 - Present",
-    description: "Architecting secure smart contracts and auditing protocol logic for high-TVL decentralized applications. Leading a team of 4 full-stack developers.",
-    skills: ["Solidity", "Security Audits", "EVM", "Team Lead"]
+    company: "Full Stack & Blockchain Developer",
+    role: "Freelance",
+    period: "2019 - Present",
+    description: "Contributing to over 50 projects. Expert in delivering robust, scalable applications using modern web technologies and blockchain frameworks like Rust and Solidity.",
+    skills: ["Rust", "Solidity", "TypeScript", "React", "Node.js"]
   },
   {
-    company: "TechFlow Systems",
-    role: "Full Stack Developer",
-    period: "2021 - 2023",
-    description: "Developed scalable microservices using Node.js and Go. Optimized frontend performance by 40% using Next.js and advanced caching strategies.",
-    skills: ["Node.js", "React", "Go", "Redis"]
+    company: "Community Leadership",
+    role: "Community Manager",
+    period: "2019 - 2024",
+    description: "Leading vibrant crypto communities and contributing to technical project management and strategic development.",
+    skills: ["Leadership", "Project Management", "Communication"]
   },
   {
-    company: "CryptoGuard",
-    role: "Smart Contract Developer",
-    period: "2020 - 2021",
-    description: "Implemented multi-signature wallet protocols and integrated cross-chain bridge solutions for enterprise clients.",
-    skills: ["Web3.js", "Hardhat", "Cryptography"]
+    company: "Bachelor of Technology",
+    role: "Building Technology Graduate",
+    period: "FUTA, Nov 2024",
+    description: "Gained structural and analytical skills applied to designing complex systems in both physical and digital realms.",
+    skills: ["Analytical Thinking", "Strategic Planning"]
   }
 ];
 
@@ -32,10 +34,20 @@ export const Experience = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-16 space-y-4"
         >
-          <div className="text-primary font-mono text-sm tracking-[0.3em] uppercase mb-4">Journey</div>
-          <h2 className="text-4xl font-bold tracking-tight">Career Milestones</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Professional Journey</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A history of technical leadership, creative problem solving, and building decentralized solutions.
+          </p>
+          <div className="flex justify-center pt-4">
+            <Button asChild className="rounded-full px-8 h-12 flex gap-2 group transition-all duration-300">
+              <a href="/resume.txt" download="Oloyerinde_Oluwatosin_Joseph_Resume.txt">
+                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                Download Resume
+              </a>
+            </Button>
+          </div>
         </motion.div>
 
         <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border/50 before:to-transparent">

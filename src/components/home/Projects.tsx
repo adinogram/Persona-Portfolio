@@ -214,15 +214,11 @@ export const Projects = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-2"
           >
-            <div className="flex items-center gap-2 text-primary">
-              <Terminal className="w-5 h-5" />
-              <span className="text-xs font-mono tracking-[0.4em] uppercase font-bold">Project Repository // Index-03</span>
-            </div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Engineering Cases</h2>
-            <p className="text-muted-foreground max-w-xl leading-relaxed font-mono text-sm uppercase tracking-wide">
-              Selected works analyzed through a product-first engineering lens. Focus on scalability, security, and user experience.
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Selected Projects</h2>
+            <p className="text-muted-foreground max-w-xl leading-relaxed font-mono text-xs uppercase tracking-wide">
+              Engineering case studies focused on scalability, security, and performance.
             </p>
           </motion.div>
           

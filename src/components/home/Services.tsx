@@ -50,10 +50,9 @@ export const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-primary font-mono text-sm tracking-[0.3em] uppercase mb-4">Capabilities</div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Expert Solutions</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I combine technical excellence with strategic thinking to build software that drives real-world value.
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Services</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-mono text-xs uppercase tracking-widest">
+            Specialized engineering solutions for complex systems.
           </p>
         </motion.div>
 

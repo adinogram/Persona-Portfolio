@@ -27,7 +27,7 @@ interface JourneyMilestone {
 const journeyData: JourneyMilestone[] = [
   {
     id: "student",
-    year: "2018 - 2021",
+    year: "2019 - 2024",
     title: "Building Technology",
     subtitle: "Undergraduate Studies",
     details: "I started my academic journey studying Building Technology. This period was crucial for developing a structural mindset and understanding how complex systems are designed and constructed in the physical world.",
@@ -37,7 +37,7 @@ const journeyData: JourneyMilestone[] = [
   },
   {
     id: "selftaught",
-    year: "2021 - 2022",
+    year: "2021",
     title: "The Self-Taught Shift",
     subtitle: "Breaking into Code",
     details: "I discovered a passion for bits over bricks. I spent my nights mastering HTML, CSS, and basic JavaScript, learning the magic of building things from a blank text editor.",
@@ -97,13 +97,9 @@ export const Journey = () => {
 
       <div className="max-w-4xl mx-auto relative z-10">
         <header className="text-center mb-20 space-y-4">
-          <div className="flex items-center justify-center gap-2 text-primary">
-            <History className="w-5 h-5" />
-            <span className="text-xs font-mono tracking-[0.4em] uppercase font-bold">Chronology // Pathway-01</span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter">My Journey</h2>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter">Journal</h2>
           <p className="text-muted-foreground max-w-xl mx-auto font-mono text-xs uppercase tracking-wider leading-relaxed">
-            From structures in the physical world to engineering decentralization in the digital realm.
+            From structures in the physical world to engineering decentralization.
           </p>
         </header>
 
@@ -122,15 +118,8 @@ export const Journey = () => {
               {/* Connector Dot */}
               <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-background bg-primary z-20 hidden md:block" />
 
-              {/* Year Rail (Oversized Typography) */}
-              <div className={`w-full md:w-1/2 px-8 flex justify-center ${index % 2 === 0 ? "md:justify-end" : "md:justify-start"}`}>
-                <div className="text-5xl md:text-7xl font-black tracking-tighter text-muted-foreground/10 select-none font-mono">
-                  {item.year.split(' ')[0]}
-                </div>
-              </div>
-
               {/* Card Container */}
-              <div className="w-full md:w-1/2 px-0 md:px-8 mt-4 md:mt-0">
+              <div className="w-full md:w-[80%] mx-auto px-0 md:px-8 mt-4 md:mt-0">
                 <motion.div 
                   layout
                   onClick={() => setExpandedId(expandedId === item.id ? null : item.id)}
@@ -193,7 +182,7 @@ export const Journey = () => {
         {/* Closing Milestone */}
         <div className="mt-20 flex flex-col items-center gap-4 text-center">
           <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent" />
-          <div className="text-[10px] font-mono uppercase tracking-[0.5em] text-muted-foreground italic animate-pulse">
+          <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted-foreground italic">
             To be continued...
           </div>
         </div>

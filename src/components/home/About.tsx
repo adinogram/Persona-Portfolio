@@ -12,12 +12,11 @@ export const About = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="text-primary mb-4 font-mono text-sm tracking-widest uppercase">01. Background</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Engineering the future of Web3 and scalable apps.
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            My name is Oloyerinde Oluwatosin Joseph, though many know me as <span className="text-primary font-bold">Adino</span>. 
+            My name is <span className="text-foreground font-medium">Oluwatosin Joseph Oloyerinde</span>. 
             I'm a full-stack and blockchain developer dedicated to creating impactful digital experiences. 
             My journey is driven by a relentless pursuit of technical excellence and a commitment to building products that matter.
           </p>

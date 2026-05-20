@@ -12,12 +12,9 @@ export const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     { icon: <User className="w-5 h-5" />, label: "Profile", href: "#about" },
     { icon: <Milestone className="w-5 h-5" />, label: "Journey", href: "#journey" },
     { icon: <Briefcase className="w-5 h-5" />, label: "Work", href: "#experience" },
-    { icon: <Compass className="w-5 h-5" />, label: "Vision", href: "#vision" },
     { icon: <Zap className="w-5 h-5" />, label: "Services", href: "#services" },
-    { icon: <Construction className="w-5 h-5" />, label: "Build", href: "#build-in-public" },
     { icon: <Globe className="w-5 h-5" />, label: "Skills", href: "#skills" },
     { icon: <Monitor className="w-5 h-5" />, label: "Dev", href: "#projects" },
-    { icon: <Activity className="w-5 h-5" />, label: "Stats", href: "#github-intel" },
   ];
 
   return (
@@ -29,11 +26,12 @@ export const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     >
       <a href="#hero" className="flex items-center gap-1 group">
         <div className="font-mono font-black text-xl tracking-tighter flex items-center gap-0.5">
-          <span className="text-primary">A</span>
-          <span className="group-hover:translate-x-0.5 transition-transform">D</span>
-          <span className="group-hover:translate-x-1 transition-transform text-primary/80">I</span>
-          <span className="group-hover:translate-x-1.5 transition-transform">N</span>
-          <span className="group-hover:translate-x-2 transition-transform text-primary/60">O</span>
+          <span className="text-primary font-bold">J</span>
+          <span className="group-hover:translate-x-0.5 transition-transform">O</span>
+          <span className="group-hover:translate-x-1 transition-transform text-primary/80">S</span>
+          <span className="group-hover:translate-x-1.5 transition-transform">E</span>
+          <span className="group-hover:translate-x-2 transition-transform text-primary/60">P</span>
+          <span className="group-hover:translate-x-2.5 transition-transform">H</span>
         </div>
       </a>
       <div className="w-px h-6 bg-border mx-2" />
