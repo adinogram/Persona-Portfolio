@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+// @ts-ignore
+import techImage from "../../assets/images/tech_web3_network_1780034393166.png";
 
 export const About = () => {
   return (
@@ -17,7 +19,7 @@ export const About = () => {
           </h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             My name is <span className="text-foreground font-medium">Oluwatosin Joseph Oloyerinde</span>. 
-            I'm a full-stack and blockchain developer dedicated to creating impactful digital experiences. 
+            I'm a Full-Stack Software Engineer & Blockchain Engineer dedicated to creating impactful digital experiences. 
             My journey is driven by a relentless pursuit of technical excellence and a commitment to building products that matter.
           </p>
           <div className="flex flex-wrap gap-2">
@@ -52,8 +54,8 @@ export const About = () => {
         >
           <div className="aspect-square rounded-2xl bg-muted/50 overflow-hidden border border-border group">
             <img 
-              src="https://picsum.photos/seed/developer/800/800" 
-              alt="Developer Profile"
+              src={techImage} 
+              alt="Web3 and High-Tech Decentrailized Node Network Graphic"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               referrerPolicy="no-referrer"
             />

@@ -1,42 +1,107 @@
 OLOYERINDE OLUWATOSIN JOSEPH
-Full Stack Developer & Blockchain Developer
-📧 Email: d.gramjoseph@gmail.com | 📱 Phone: +234 9037673964
-🔗 LinkedIn: https://www.linkedin.com/in/oluwatosin-oloyerinde-644736240
-🔗 GitHub: github.com/badgesultan
+Full-Stack Software Engineer  |  Blockchain Developer
+📍 Abuja, Nigeria   📧 d.gramjoseph@gmail.com   📱 +234 9037673964   🔗 linkedin.com/in/oluwatosin-oloyerinde-644736240   github.com/adinogram
 
-________________________________________
 PROFESSIONAL SUMMARY
-Dynamic Full Stack and Blockchain Developer with a wealth of experience across diverse industries. Proven expertise in delivering robust, scalable applications using modern web technologies and blockchain frameworks like Rust and Solidity. Passionate about innovative solutions, with a history of contributing to over 50 projects and leading vibrant crypto communities. Strong leadership, project management, and technical skills honed since 2019 as a community manager, crypto enthusiast, and developer.
+Full-Stack Software and Blockchain Developer with experience building responsive web applications, backend systems, and blockchain-based solutions across Web2 and Web3 ecosystems. Skilled in JavaScript, TypeScript, React.js, Node.js, Solidity, and modern development workflows, with practical experience developing decentralized applications, integrating APIs, and building scalable digital products.
 
-________________________________________
-CORE COMPETENCIES
-• Frontend: HTML, CSS, JavaScript, TypeScript, React.js, Angular
-• Backend: Node.js, Express.js, Python, Solidity, Rust
-• Blockchain: Smart Contract Development, Web3.js, Solana, Ethereum
-• Database: PostgreSQL, MongoDB, SQL
-• Tools & Platforms: Docker, Git, AWS, Heroku
-• Soft Skills: Leadership, Communication, Team Collaboration, Problem-Solving
-• Other Skills: Project Management, Community Building, Agile Development
+Experienced in collaborating across remote and hybrid environments, contributing to software projects, blockchain education initiatives, crypto communities, and full-stack application development. Passionate about continuous learning, problem-solving, and building innovative technology solutions with real-world impact.
 
-________________________________________
+TECHNICAL SKILLS
+Frontend: React.js, JavaScript (ES6+), TypeScript, HTML5, CSS3, Tailwind CSS, Angular, Responsive UI Design
+Backend: Node.js, NestJS, Express.js, REST APIs, Authentication Systems, Python
+Blockchain & Web3: Solidity, Rust, Ethereum, Solana, Web3.js, Smart Contracts, DApp Development, Wallet Integration
+Databases & Cloud: PostgreSQL, MongoDB, SQL, AWS, Docker, Heroku
+Tools: Git & GitHub, Postman, VS Code
+Professional: Agile Development, Team Collaboration, Leadership, Communication, Problem Solving, Community Management
+
+PROFESSIONAL EXPERIENCE
+Full Stack & Blockchain Developer
+Self-Employed  |  February 2025 – Present
+•	Building and exploring modern full-stack and blockchain applications independently.
+•	Developing projects involving smart contracts, decentralized systems, APIs, and scalable web applications.
+•	Expanding expertise in Web3 technologies, backend systems, and modern frontend architectures.
+•	Working on personal software products, blockchain solutions, and technical research initiatives.
+
+Full Stack & Blockchain Developer
+DotCircle Labs  |  December 2022 – January 2025
+•	Developed full-stack web and blockchain solutions using modern JavaScript technologies and Web3 tools.
+•	Built and experimented with decentralized applications, smart contracts, and crypto-related platforms.
+•	Collaborated on frontend, backend, and blockchain integration tasks across development workflows.
+•	Improved technical problem-solving and software engineering skills through practical development experience.
+
+
+Blockchain Developer Intern
+DotCircle Labs  |  March 2022 – December 2024
+•	Assisted in blockchain development tasks involving decentralized applications and smart contract workflows.
+•	Participated in software development, testing, and blockchain integration activities.
+•	Worked with development teams to improve application functionality and blockchain-related systems.
+•	Gained hands-on experience with Web3 technologies and decentralized application structures.
+
+Junior Full Stack Developer (Freelance)
+Self-Employed  |  December 2020 – March 2022
+•	Built responsive web applications using React.js, Node.js, and JavaScript.
+•	Worked on freelance software projects involving frontend and backend development.
+•	Integrated APIs, authentication systems, and early blockchain/Web3 solutions.
+•	Developed applications for fintech and crypto-related use cases.
+
+Blockchain Intern
+ILEARNBLOCK  |  January 2020 – December 2020
+•	Assisted in blockchain research and smart contract learning initiatives.
+•	Supported blockchain education programs and technical learning activities.
+•	Gained foundational experience with Solidity, decentralized applications, and blockchain concepts.
+•	Collaborated with teams on blockchain events and educational programs.
+
+Crypto Community Moderator & Manager
+Crypto Communities  |  January 2019 – Present
+•	Managed and moderated online crypto communities across multiple platforms.
+•	Supported blockchain education initiatives, community engagement, and project discussions.
+•	Assisted users with community support and communication activities.
+•	Collaborated with crypto teams to improve awareness, engagement, and community growth.
+
+SELECTED PROJECTS
+ProScore  —  Real-Time Sports Platform  ★ FLAGSHIP
+Technologies: React.js, NestJS, PostgreSQL, Server-Sent Events (SSE), TypeScript
+•	Real-time live score updates using event streaming architecture
+•	Structured backend API design with NestJS
+•	Scalable database schema using PostgreSQL
+•	Responsive frontend dashboard for live match tracking
+
+PayLink MiniPay (Celo Blockchain)
+Technologies: TypeScript, Celo, Web3
+•	Wallet-based payment link generation
+•	Stablecoin transaction flow
+•	Simple Web3 payment UX design
+
+
+Solana Volume Bot
+Technologies: Solana, Node.js, JavaScript
+•	Automated transaction logic
+•	DEX interaction experimentation
+•	Volume simulation system design
+
+Solana Token Project
+Technologies: Rust, Solana, Web3.js
+•	Token minting and transfer logic
+•	Smart contract deployment
+•	Wallet integration flow
+
+ClientIQ Hub
+Technologies: JavaScript, Node.js
+•	Workflow automation system design
+•	Multi-channel communication structure
+•	Backend integration planning
+
 CERTIFICATIONS
-• Certified Blockchain Developer (Blockchain Council)
-• Full-Stack Web Development Nanodegree (Udacity)
-• Meta Front-End Developer Certificate (Coursera)
-• JavaScript Algorithms and Data Structures (freeCodeCamp)
+•	Certified Blockchain Developer — Blockchain Council
+•	Full-Stack Web Development Nanodegree — Udacity
+•	Meta Front-End Developer Certificate — Coursera
+•	JavaScript Algorithms and Data Structures — freeCodeCamp
 
-________________________________________
 EDUCATION
-Bachelor of Technology (B.Tech) in Building Technology
-Federal University of Technology Akure (FUTA), Nigeria 
-November 2024
+Federal University of Technology Akure (FUTA)
+Bachelor of Technology (B.Tech) — Building Technology  |  Nigeria, 2024
 
-________________________________________
-PERSONAL ATTRIBUTES
-• Leadership and team management skills, with a focus on fostering collaboration.
-• Proactive and adaptable, with a commitment to continuous learning and development.
-• Strong analytical and creative problem-solving abilities.
-
-________________________________________
 LANGUAGES
-• English: Fluent
+English: Fluent
+German: Basic

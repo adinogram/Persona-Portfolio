@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 import { Shield, Zap, Globe, ArrowRight, Download, Briefcase, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const Hero = () => {
   const [statementIndex, setStatementIndex] = useState(0);
@@ -129,13 +130,16 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-mono tracking-widest uppercase mb-4">
+          <a 
+            href="#contact" 
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-all duration-300 text-primary text-xs font-mono tracking-widest uppercase mb-4"
+          >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             Available for new projects
-          </div>
+          </a>
 
           <div className="space-y-4">
             <h1 
@@ -149,7 +153,7 @@ export const Hero = () => {
                 Oluwatosin Joseph
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground font-light max-w-xl">
-                Full Stack Engineer | Blockchain Developer | <span className="text-primary font-medium">Future Venture Builder</span>
+                Full-Stack Software Engineer & Blockchain Engineer | <span className="text-primary font-medium">Future Venture Builder</span>
               </p>
             </div>
           </div>
@@ -176,21 +180,16 @@ export const Hero = () => {
                 View Projects <ArrowRight className="w-4 h-4" />
               </Button>
             </a>
-            <Button size="lg" variant="outline" className="rounded-full px-8 gap-2 border-border/50 hover:bg-muted" asChild>
-              <a href="/resume.txt" download="Oloyerinde_Oluwatosin_Joseph_Resume.txt">
-                <Download className="w-4 h-4" /> Download Resume
-              </a>
-            </Button>
-            <div className="flex w-full sm:w-auto gap-2">
-              <a href="#contact" className="flex-1 sm:flex-initial">
-                <Button variant="ghost" className="w-full rounded-full border border-border/20 px-6 font-medium">
-                  Hire Me
-                </Button>
-              </a>
-              <Button variant="ghost" className="flex-1 sm:flex-initial rounded-full border border-border/20 px-6 font-medium">
-                Let's Build
-              </Button>
-            </div>
+            <a 
+              href="/resume.txt" 
+              download="Oloyerinde_Oluwatosin_Joseph_Resume.txt"
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "rounded-full px-8 gap-2 border-border/50 hover:bg-muted flex items-center justify-center font-medium"
+              )}
+            >
+              <Download className="w-4 h-4" /> Download Resume
+            </a>
           </div>
 
           {/* Trust Metrics */}
@@ -225,7 +224,7 @@ export const Hero = () => {
               <Award className="w-5 h-5 text-primary opacity-50" />
             </div>
             <p className="text-2xl font-light leading-snug text-white">
-              Currently building skills in <span className="font-bold text-primary">Full Stack + Blockchain Engineering</span> while creating products with global impact.
+              Currently building skills in <span className="font-bold text-primary">Full-Stack Software Engineering & Blockchain Engineering</span> while creating products with global impact.
             </p>
             <div className="space-y-4 pt-4 border-t border-white/5">
               <div className="flex items-center justify-between text-xs font-mono">

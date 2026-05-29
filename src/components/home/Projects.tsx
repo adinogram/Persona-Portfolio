@@ -22,110 +22,180 @@ import React, { useState, useMemo, useRef } from "react";
 
 const projects = [
   {
-    id: "defi",
-    title: "DeFi Yield Aggregator",
-    description: "An automated yield farming platform that optimizes returns across multiple liquidity pools using smart contract strategies.",
-    problem: "DeFi users struggle with manually rebalancing assets to optimize yield, often losing significant shares to gas fees and slippage during shifts in liquidity between protocols like Aave and Uniswap.",
-    research: "Analyzed existing aggregators (Yearn, Beefy) to identify inefficiencies in gas optimization. Researched ERC-4626 standard for vault standardization and LayerZero for potential future omnichain expansion.",
+    id: "proscore",
+    title: "ProScore — Real-Time Sports Platform",
+    description: "A real-time sports updates platform utilizing Event Streaming architecture, featuring low-latency live scores, NestJS backends, and modular PostgreSQL database handling.",
+    problem: "Delivering real-time sports event tracking with millisecond-grade live sync often strains traditional HTTP polling servers and database threads, resulting in laggy outputs.",
+    research: "Researched WebSocket-based state pushes versus Server-Sent Events (SSE), choosing SSE for continuous linear sports telemetry streaming due to lighter overhead, clean unidirectional flows, and simplified reconnection paradigms.",
     architecture: {
-      diagram: "Vault -> Controller -> Strategy -> Protocol",
-      description: "A modular architecture separating fund custody (Vault) from movement logic (Controller and Strategy). Each strategy is a pluggable smart contract targeting a specific protocol."
+      diagram: "Match events -> NestJS Worker -> SSE Hub -> React.js Client",
+      description: "Structured live-event worker pipeline that ingests raw telemetry matrices and feeds active Server-Sent Events (SSE) loops directly to active subscribers."
     },
-    techStack: ["Solidity", "TypeScript", "React", "Ether.js", "Hardhat", "The Graph"],
+    techStack: ["React.js", "NestJS", "PostgreSQL", "SSE", "TypeScript", "Tailwind CSS"],
     challenges: [
-      "Implementing gas-efficient rebalancing logic during high network congestion.",
-      "Ensuring mathematical precision in interest rate calculations across different protocol versions.",
-      "Developing a robust emergency shutdown mechanism for smart contract security."
+      "Mitigating database write locks when under excessive simultaneous live event streams.",
+      "Handling thousands of concurrent live connections on a single container layer.",
+      "Managing stable state reconstitution for clients reconnecting after short network drops."
     ],
     solutions: [
-      "Utilized GSN (Gas Station Network) to allow meta-transactions.",
-      "Implemented a floating-point precision library for complex rate calculations.",
-      "Integrated OpenZeppelin's Pausable and AccessControl for granular permission management."
+      "Implemented concurrent batch write-pooling queues and lightweight read indexes in PostgreSQL.",
+      "Utilized SSE streaming combined with NestJS reactive observables to optimize concurrent thread management.",
+      "Developed client-side event sequencers to rebuild missing live segments on reconnection."
     ],
-    lessonsLearned: "Immutability is both a blessing and a curse. Rigorous auditing and formal verification are non-negotiable in production DeFi environments.",
-    futureImprovements: "Integration with LayerZero for cross-chain yield optimization and migration to Account Abstraction (ERC-4337) for better UX.",
-    readTime: "6 min read",
-    codeSnippet: `// Example Strategy Harvesting
-function harvest() external onlyController {
-  uint256 balance = IERC20(want).balanceOf(address(this));
-  _withdrawFromProtocol(balance);
-  _reportProfit(balance);
-  _reinvest();
+    lessonsLearned: "SSE is exceptionally efficient for high-frequency live read-only broadcasts, keeping resource usage to a fraction of equivalent WebSocket pipelines.",
+    futureImprovements: "Full web-push trigger backups and native edge cache-proxy acceleration for live streams of high-profile events.",
+    readTime: "7 min read",
+    codeSnippet: `// Server-Sent Events Stream Endpoint in NestJS
+@Sse('events/:matchId')
+sendMatchEvents(@Param('matchId') id: string): Observable<MessageEvent> {
+  return this.matchEventsService.getStream(id).pipe(
+    map((data) => ({ data, type: 'match-update' } as MessageEvent))
+  );
 }`,
-    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2000&auto=format&fit=crop",
-    tags: ["Solidity", "TypeScript", "React", "Ether.js"],
-    github: "https://github.com/adinogram/defi-yield",
-    live: "https://defi-yield-demo.vercel.app"
+    image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2000&auto=format&fit=crop",
+    tags: ["React.js", "NestJS", "PostgreSQL", "TypeScript"],
+    github: "https://github.com/adinogram/proscore",
+    live: "https://github.com/adinogram"
   },
   {
-    id: "erp",
-    title: "NextGen ERP Engine",
-    description: "A full-scale cloud-native ERP system designed for SMEs, featuring inventory management, CRM, and real-time analytics.",
-    problem: "Small to medium enterprises often use fragmented tools that don't communicate, leading to data silos, inventory inaccuracies, and inefficient customer relationship management.",
-    research: "Conducted interviews with 15 local SME owners. Key findings: 80% struggle with inventory-sales sync, and 90% find enterprise solutions (SAP, Oracle) too expensive and complex.",
+    id: "paylink",
+    title: "PayLink MiniPay (Celo Blockchain)",
+    description: "An elegant, stablecoin-focused lightweight Web3 payment client for instant, wallet-based checkout links built specifically for Celo's mobile Opera ecosystem.",
+    problem: "Friction-heavy onboarding and expensive gas cost structures prevent on-the-ground vendors in emerging markets from adopting Web3 payment models.",
+    research: "Analyzed native mobile gas abstractions and fast, instant stablecoin transaction pipelines on Celo's Ultra-light protocol framework.",
     architecture: {
-      diagram: "Microservices -> Message Bus -> Aggregator -> Client",
-      description: "Distributed service architecture using Node.js services communicating via a Redis message bus for real-time state synchronization across inventory and sales modules."
+      diagram: "MiniPay Client -> Wallet-Link -> Smart Contract -> cUSD Ledger",
+      description: "Mobile-optimized browser wallet handshakes combined with instant ERC-20 contract triggers on the high-throughput Celo network."
     },
-    techStack: ["Node.js", "PostgreSQL", "React", "Docker", "Redis", "D3.js"],
+    techStack: ["TypeScript", "Celo", "Web3.js", "React.js", "Vite", "Tailwind CSS"],
     challenges: [
-      "Optimizing complex SQL queries for real-time reporting over millions of records.",
-      "Building a scalable multi-tenant architecture with strict data isolation.",
-      "Designing a highly responsive UI that remains performant with large data tables."
+      "Optimizing deep-link callback loops in native WebView wrappers under extreme low-bandwidth connections.",
+      "Handling signature verification latency without freezing the merchant's screen layout.",
+      "Formatting complex smart contract payload responses in space-restricted mobile viewports."
     ],
     solutions: [
-      "Implemented PostgreSQL materialized views for lightning-fast aggregated reports.",
-      "Developed a schema-per-tenant isolation strategy for maximum security.",
-      "Used React Virtualized for rendering massive inventory lists with zero lag."
+      "Integrated fast local deep-link routing structures that fall back to standard browser connections gracefully.",
+      "Adopted optimistic UI updates to instantly register payments, backed by full async RPC verification lists.",
+      "Designed clean, text-less transaction indicators styled precisely for lightweight mobile displays."
     ],
-    lessonsLearned: "Materialized views are a game-changer for analytics, but cache invalidation logic must be bulletproof.",
-    futureImprovements: "AI-driven demand forecasting and automated supplier ordering based on low-stock triggers.",
-    readTime: "8 min read",
-    codeSnippet: `// Materialized View Refresh Logic
-async function refreshAnalytics() {
-  await db.query('REFRESH MATERIALIZED VIEW CONCURRENTLY daily_sales_report');
-  broadcastUpdate('analytics_ready');
-}`,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
-    tags: ["Node.js", "PostgreSQL", "React", "Docker"],
-    github: "https://github.com/adinogram/erp-system",
-    live: "https://erp-enterprise.demo"
-  },
-  {
-    id: "nft",
-    title: "NFT Protocol X",
-    description: "A white-label solution for creators to mint, trade, and auction high-quality digital assets with low gas fees.",
-    problem: "High Ethereum gas fees and complex UX for non-crypto natives prevent mass adoption of digital collectibles for mainstream creators.",
-    research: "Benchmarked performance of Polygon vs Arbitrum for minting costs. Researched EIP-2981 for universal royalty support.",
-    architecture: {
-      diagram: "Creator -> SDK -> IPFS -> L2 Chain -> Marketplace",
-      description: "Hybrid architecture using IPFS for content persistence and Polygon for high-throughput, low-fee transaction execution."
-    },
-    techStack: ["Hardhat", "Next.js", "Tailwind", "IPFS", "Polygon", "Alchemy"],
-    challenges: [
-      "Integrating layer-2 scaling solutions (Polygon) to solve Ethereum's high gas fee issues.",
-      "Standardizing metadata structures for compatibility across different NFT explorers.",
-      "Implementing a secure secondary market royalty system for creators."
-    ],
-    solutions: [
-      "Implemented gasless minting via Biconomy relayers.",
-      "Built a custom metadata validator to ensure OpenSea / Rarible compatibility.",
-      "Adopted EIP-2981 for multi-chain royalty enforcement."
-    ],
-    lessonsLearned: "Metadata is as important as the smart contract itself. If IPFS pins fail, the NFT value vanishes.",
-    futureImprovements: "Dynamic NFT support (metadata that changes based on on-chain events) and fiat-to-nft checkout.",
+    lessonsLearned: "Designing for actual human utility in high-performance situations requires prioritizing mobile-first optimization and minimal wallet transaction roundtrips.",
+    futureImprovements: "Adding automatic backup bridges to alternative Layer-2 chains and expanding direct QR offline checkouts.",
     readTime: "5 min read",
-    codeSnippet: `// Lazy Minting Data structure
-const lazyMint = {
-  tokenId: 1,
-  minPrice: ethers.utils.parseEther("0.1"),
-  uri: "ipfs://...",
-  signature: "0x..."
-};`,
-    image: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=2000&auto=format&fit=crop",
-    tags: ["Hardhat", "Next.js", "Tailwind", "IPFS"],
-    github: "https://github.com/adinogram/nft-marketplace",
-    live: "https://nft-engine.demo"
+    codeSnippet: `// Generating Mobile Wallet Payment Request
+const tx = await contract.methods.transfer(recipient, amount).send({
+  from: userWalletAddress,
+  feeCurrency: celoStableCoinAddress
+});`,
+    image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=2000&auto=format&fit=crop",
+    tags: ["Celo", "TypeScript", "Web3.js", "React.js"],
+    github: "https://github.com/adinogram",
+    live: "https://github.com/adinogram"
+  },
+  {
+    id: "solana-bot",
+    title: "Solana Volume Bot",
+    description: "An automated volume simulation and liquidity tracking system designed for direct, fast DEX integrations on the high-frequency Solana blockchain.",
+    problem: "Simulating steady, organic ledger state updates is incredibly complex due to transaction front-running, volatile transaction costs, and raw Raydium pools latency.",
+    research: "Analyzed Solana transaction life-cycles, absolute priority fees optimization modules, and Raydium/Jupiter SDK structures for immediate, concurrent execution pathways.",
+    architecture: {
+      diagram: "Watcher Bot -> Jupiter API -> Solana RPC -> DEX Liquidity Pool",
+      description: "Low-overhead node runner executing parallel automated trading pairs via optimized transaction serialization protocols."
+    },
+    techStack: ["Solana", "Node.js", "JavaScript", "Jupiter API"],
+    challenges: [
+      "Mitigating transaction drop rates caused by extreme on-chain Solana congestions.",
+      "Managing precise private key isolation structures inside multi-threaded runtime loops.",
+      "Creating robust balance trackers that accurately sync wallet liquidity levels across sudden price slippages."
+    ],
+    solutions: [
+      "Implemented dynamic compute budget unit modifications based on active on-chain fees recommendations.",
+      "Secured environment variable keys via strict local vault architectures with hardware separation limits.",
+      "Coded retry streams backed by robust, rapid RPC backup-endpoints rotation loops."
+    ],
+    lessonsLearned: "Dynamic compute budget adjustments are crucial to guarantee immediate transaction confirmations during major launch hours on Solana.",
+    futureImprovements: "Integrating advanced Jito bundle strategies to fully suppress mev/front-running losses.",
+    readTime: "6 min read",
+    codeSnippet: `// Sending Raydium Swap Transaction with Dynamic CU Budgets
+const modifyComputeUnits = ComputeBudgetProgram.setComputeUnitLimit({ units: 100000 });
+const addPriorityFee = ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 50000 });
+const tx = new Transaction().add(modifyComputeUnits, addPriorityFee, swapInstruction);`,
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2000&auto=format&fit=crop",
+    tags: ["Solana", "Node.js", "JavaScript", "Jupiter API"],
+    github: "https://github.com/adinogram",
+    live: "https://github.com/adinogram"
+  },
+  {
+    id: "solana-token",
+    title: "Solana Token Project",
+    description: "A secure, rust-backed Solana spl-token manager featuring customizable minting mechanisms, royalty limits, and instant web wallet interactions.",
+    problem: "Most blockchain token projects rely on rigid templates with highly insecure, rigid parameter controls and bad responsive web experiences.",
+    research: "Researched Rust-based anchor framework limits and Solana's dynamic token metadata standards for immediate on-chain updates.",
+    architecture: {
+      diagram: "Web Wallet -> SPL-Token Client -> Rust Smart Contract -> Solana Block",
+      description: "Rust smart contracts managing absolute minting restrictions and metadata configurations directly tied to an interactive React dashboard."
+    },
+    techStack: ["Rust", "Solana", "Anchor", "React.js", "Tailwind CSS"],
+    challenges: [
+      "Structuring safe custom state accounts on Solana to store token limits without inflating rent-exempt fees.",
+      "Ensuring clean, cross-compatible support for all modern Solana wallets (Phantom, Solflare).",
+      "Validating high-throughput state updates for immediate dashboard syncs."
+    ],
+    solutions: [
+      "Optimized Rust struct data allocations to achieve absolute minimum account sizes on-ledger.",
+      "Utilized the robust Solana Wallet Adapter suite to ensure perfect native wallet support.",
+      "Built resilient local state caching loops using simple, fast indexer polling systems."
+    ],
+    lessonsLearned: "Solana's unique account structures demand careful state layout planning from day one to keep ledger costs completely manageable.",
+    futureImprovements: "Supporting native gasless metaplex minting capabilities for simplified non-web3 native checkouts.",
+    readTime: "5 min read",
+    codeSnippet: `// Anchor Smart Contract - Token Minting Restrictive Check
+pub fn mint_tokens(ctx: Context<MintTokens>, amount: u64) -> Result<()> {
+    let cpi_accounts = MintTo {
+        mint: ctx.accounts.token_mint.to_account_info(),
+        to: ctx.accounts.user_token_account.to_account_info(),
+        authority: ctx.accounts.mint_authority.to_account_info(),
+    };
+    /* ... execute safe SPL Mint cross contract call ... */
+}`,
+    image: "https://images.unsplash.com/photo-1644024541214-e591b7d5a5cf?q=80&w=2000&auto=format&fit=crop",
+    tags: ["Rust", "Solana", "Anchor", "React.js"],
+    github: "https://github.com/adinogram",
+    live: "https://github.com/adinogram"
+  },
+  {
+    id: "clientiq-hub",
+    title: "ClientIQ Hub",
+    description: "An automated workflow manager and CRM orchestrator designed to unify communication streams, client touchpoints, and custom backend syncs.",
+    problem: "Teams lose significant resources manually syncing task structures and messages between separate email list interfaces and operational databases.",
+    research: "Researched web-socket queues, event trigger patterns, and concurrent asynchronous message queuing logic to streamline business software systems.",
+    architecture: {
+      diagram: "Client Action -> Webhook Gateway -> Node.js Processor -> DB & Slack Sync",
+      description: "Highly redundant Express.js handler that accepts custom external event triggers and fanned-out workflows safely over asynchronous workers."
+    },
+    techStack: ["JavaScript", "Node.js", "Express.js", "PostgreSQL", "Webhooks", "JSON Schema"],
+    challenges: [
+      "Handling unexpected format mutations and breaking payloads from varying third-party webhooks.",
+      "Ensuring zero event drops when traffic spikes occur.",
+      "Designing a clean flow structure that is easily configurable without custom rebuilding."
+    ],
+    solutions: [
+      "Implemented a rigid JSON Schema validation middleware to capture format errors instantly.",
+      "Used memory-backed robust buffer queues to sustain sudden spikes in action signals.",
+      "Coded a dynamic routing config file allowing users to adjust channel sync endpoints easily."
+    ],
+    lessonsLearned: "Defensive coding against unstable third-party webhook structures prevents 99% of common server-side automation failures.",
+    futureImprovements: "Adding drag-and-drop workflow configuration graphics and dynamic AI email draft responders.",
+    readTime: "5 min read",
+    codeSnippet: `// Webhook Handler with schema validation middleware
+app.post('/api/webhook/client', validateSchema(clientHubSchema), async (req, res) => {
+  const { eventType, payload } = req.body;
+  await eventQueueService.deferTask(eventType, payload);
+  res.status(202).json({ status: 'queued' });
+});`,
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2000&auto=format&fit=crop",
+    tags: ["JavaScript", "Node.js", "Express.js", "Webhooks"],
+    github: "https://github.com/adinogram",
+    live: "https://github.com/adinogram"
   }
 ];
 

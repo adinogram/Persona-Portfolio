@@ -1,29 +1,44 @@
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { FileDown, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const experiences = [
   {
-    company: "Full Stack & Blockchain Developer",
-    role: "Freelance",
-    period: "2019 - Present",
-    description: "Contributing to over 50 projects. Expert in delivering robust, scalable applications using modern web technologies and blockchain frameworks like Rust and Solidity.",
-    skills: ["Rust", "Solidity", "TypeScript", "React", "Node.js"]
+    company: "Freelance & Independent",
+    role: "Full-Stack Software Engineer & Blockchain Engineer",
+    period: "Feb 2025 - Present",
+    description: "Building modern full-stack web apps and decentralized blockchain solutions independently. Working on smart contracts, APIs, and personal software research initiatives.",
+    skills: ["Rust", "Solidity", "NestJS", "React.js", "APIs", "TypeScript"]
   },
   {
-    company: "Community Leadership",
-    role: "Community Manager",
-    period: "2019 - 2024",
-    description: "Leading vibrant crypto communities and contributing to technical project management and strategic development.",
-    skills: ["Leadership", "Project Management", "Communication"]
+    company: "DotCircle Labs",
+    role: "Full-Stack Software Engineer & Blockchain Engineer",
+    period: "Dec 2022 - Jan 2025",
+    description: "Developed web applications and experimented with decentralized protocols, smart contracts, and Web3 tools across frontend and backend development workflows.",
+    skills: ["Solidity", "React.js", "Node.js", "Web3.js", "Smart Contracts", "DApps"]
   },
   {
-    company: "Bachelor of Technology",
-    role: "Building Technology Graduate",
-    period: "FUTA, Nov 2024",
-    description: "Gained structural and analytical skills applied to designing complex systems in both physical and digital realms.",
-    skills: ["Analytical Thinking", "Strategic Planning"]
+    company: "DotCircle Labs",
+    role: "Blockchain Engineer Intern",
+    period: "Mar 2022 - Dec 2024",
+    description: "Assisted in writing smart contracts and auditing decentralized workflows while supporting app testing, testing frameworks, and multi-chain integrations.",
+    skills: ["Solidity", "Hardhat", "EVM", "Testing", "DApp Integration"]
+  },
+  {
+    company: "Freelance",
+    role: "Junior Full Stack Developer",
+    period: "Dec 2020 - Mar 2022",
+    description: "Built responsive Web2 platforms, integrated external REST APIs, designed authentication flows, and designed fintech dashboards with React.js and Node.js.",
+    skills: ["JavaScript", "React.js", "Node.js", "Express.js", "MongoDB", "Rest APIs"]
+  },
+  {
+    company: "Crypto Communities",
+    role: "Moderator & Community Manager",
+    period: "Jan 2019 - Present",
+    description: "Managed and moderated online cryptocurrency communities, organized educational meetups, coordinated community events, and supported digital communication strategies.",
+    skills: ["Leadership", "Project Management", "Communication", "Community Building"]
   }
 ];
 
@@ -41,12 +56,17 @@ export const Experience = () => {
             A history of technical leadership, creative problem solving, and building decentralized solutions.
           </p>
           <div className="flex justify-center pt-4">
-            <Button asChild className="rounded-full px-8 h-12 flex gap-2 group transition-all duration-300">
-              <a href="/resume.txt" download="Oloyerinde_Oluwatosin_Joseph_Resume.txt">
-                <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-                Download Resume
-              </a>
-            </Button>
+            <a 
+              href="/resume.txt" 
+              download="Oloyerinde_Oluwatosin_Joseph_Resume.txt"
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "rounded-full px-8 h-12 flex items-center justify-center gap-2 group transition-all duration-300"
+              )}
+            >
+              <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+              Download Resume
+            </a>
           </div>
         </motion.div>
 

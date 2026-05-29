@@ -28,15 +28,9 @@ const services = [
   },
   {
     icon: <Cpu className="w-8 h-8" />,
-    title: "Protocol Engineering",
-    description: "Developing custom DeFi or NFT protocols from scratch, including tokenomics design and liquidity mechanisms.",
-    tags: ["Layer 2s", "Bridges", "Governance"]
-  },
-  {
-    icon: <BarChart3 className="w-8 h-8" />,
-    title: "Performance Optimization",
-    description: "Auditing existing codebases to identify bottlenecks, reducing gas costs and improving application load times.",
-    tags: ["React Profiling", "Gas Efficiency", "CI/CD"]
+    title: "Software Engineering & Performance",
+    description: "Building robust, scalable products, automation tools, and performant web systems, integrated with modern codebase optimizations and fast-load speeds.",
+    tags: ["Rust/Typescript", "Automation tools", "Performance Tuning"]
   }
 ];
 
