@@ -22,6 +22,45 @@ import React, { useState, useMemo, useRef } from "react";
 
 const projects = [
   {
+    id: "longhealth",
+    title: "LONGHEALTH — Healthcare Operations Platform",
+    description: "A next-generation hospital management platform designed to help medical institutions digitize, automate, and optimize patient care, electronic medical records, billing, and lab workflows.",
+    problem: "Healthcare institutions are held back by fragmented, disconnected silos of patient records, pharmacy inventories, and laboratory workflows, often leading to severe delays in critical patient treatment.",
+    research: "Conducted comprehensive analyses on healthcare information management standards and designed centralized database schemas capable of handling multi-tenant hospital configurations under high-concurrency conditions.",
+    architecture: {
+      diagram: "Patient Portal -> Hospital API Gateway -> Database Cluster -> Clinic Worker Services",
+      description: "A secure multi-service application that integrates patient electronic medical records (EMR), billing ledgers, pharmacy catalogs, laboratory flows, and clinical schedules."
+    },
+    techStack: ["React.js", "TypeScript", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS"],
+    challenges: [
+      "Ensuring real-time updates between active lab reports and clinician views during emergency situations.",
+      "Optimizing complex PostgreSQL locks to manage live pharmacy inventory levels down to dynamic single-dosage units.",
+      "Enforcing strict compliance, role-based data isolation, and medical privacy structures across discrete departments."
+    ],
+    solutions: [
+      "Engineered live data synchronization layers utilizing WebSocket states to instantly feed incoming diagnostic telemetry.",
+      "Created transaction-isolated ledger write procedures in PostgreSQL, effectively preventing inventory race conditions.",
+      "Built modular role-based routing guards restricting electronic health record accessibility precisely by active staff credentials."
+    ],
+    lessonsLearned: "Unifying operations into a singular, highly integrated workspace improves clinical turnaround times by up to 40% and completely eliminates traditional communication delays.",
+    futureImprovements: "Integrating offline-first local-cache databases for health clinics in remote areas with unstable internet connectivity.",
+    readTime: "6 min read",
+    codeSnippet: `// Secure Role-Based Electronic Medical Record Authorization Gate
+export function authorizeMedicalAccess(requiredRole: StaffRole) {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const userRole = req.user?.role;
+    if (!userRole || !hasSufficientPrivileges(userRole, requiredRole)) {
+      return res.status(403).json({ error: "Access Denied: Insufficient clinical clearance" });
+    }
+    next();
+  };
+}`,
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2000&auto=format&fit=crop",
+    tags: ["React.js", "Node.js", "PostgreSQL", "Healthcare"],
+    github: "https://github.com/adinogram",
+    live: "https://longhealth-access.vercel.app/"
+  },
+  {
     id: "proscore",
     title: "ProScore — Real-Time Sports Platform",
     description: "A real-time sports updates platform utilizing Event Streaming architecture, featuring low-latency live scores, NestJS backends, and modular PostgreSQL database handling.",
@@ -89,7 +128,7 @@ const tx = await contract.methods.transfer(recipient, amount).send({
     image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=2000&auto=format&fit=crop",
     tags: ["Celo", "TypeScript", "Web3.js", "React.js"],
     github: "https://github.com/adinogram",
-    live: "https://github.com/adinogram"
+    live: "https://paylink-minipay-rho.vercel.app/"
   },
   {
     id: "solana-bot",

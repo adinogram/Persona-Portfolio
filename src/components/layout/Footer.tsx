@@ -23,10 +23,10 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4">
               {[
-                { icon: <Github className="w-5 h-5" />, href: "#" },
+                { icon: <Github className="w-5 h-5" />, href: "https://github.com/adinogram" },
                 { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/oluwatosin-oloyerinde-644736240" },
                 { icon: <Twitter className="w-5 h-5" />, href: "https://x.com/adinogram" },
-                { icon: <Mail className="w-5 h-5" />, href: "mailto:adinogram1@gmail.com" }
+                { icon: <Mail className="w-5 h-5" />, href: "mailto:d.gramjoseph@gmail.com" }
               ].map((social, i) => (
                 <a 
                   key={i} 

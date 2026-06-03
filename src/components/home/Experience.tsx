@@ -7,14 +7,14 @@ import { cn } from "@/lib/utils";
 const experiences = [
   {
     company: "Freelance & Independent",
-    role: "Full-Stack Software Engineer & Blockchain Engineer",
+    role: "Full-Stack Software and Blockchain Engineer",
     period: "Feb 2025 - Present",
     description: "Building modern full-stack web apps and decentralized blockchain solutions independently. Working on smart contracts, APIs, and personal software research initiatives.",
     skills: ["Rust", "Solidity", "NestJS", "React.js", "APIs", "TypeScript"]
   },
   {
     company: "DotCircle Labs",
-    role: "Full-Stack Software Engineer & Blockchain Engineer",
+    role: "Full-Stack Software and Blockchain Engineer",
     period: "Dec 2022 - Jan 2025",
     description: "Developed web applications and experimented with decentralized protocols, smart contracts, and Web3 tools across frontend and backend development workflows.",
     skills: ["Solidity", "React.js", "Node.js", "Web3.js", "Smart Contracts", "DApps"]

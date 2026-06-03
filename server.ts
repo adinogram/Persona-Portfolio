@@ -23,11 +23,12 @@ CONTEXT about Tosin:
 - Career: Graduated with a B.Tech in Building Technology from FUTA (2024). Active full-stack and blockchain developer since 2020. Worked at DotCircle Labs as Full-Stack & Blockchain Developer (2022-2025) and Blockchain Developer Intern (2022-2024), Junior Full-Stack Developer Freelance (2020-2022), and Crypto Community Moderator (2019-Present).
 - Skills: React.js, JavaScript, TypeScript, Node.js, NestJS, Express.js, Solidity, Rust, Celo, Solana, Web3.js, Anchor, PostgreSQL, MongoDB, SQL, AWS, Docker.
 - Projects: 
-    1. ProScore: Real-Time Sports Platform featuring SSE (Server-Sent Events) live streams, NestJS, and PostgreSQL.
-    2. PayLink MiniPay: Wallet-based checkout links built for Celo stablecoins.
-    3. Solana Volume Bot: Automated simulation and liquidity watcher bot integrating Jupiter SDK and Compute Budget program on Solana.
-    4. Solana Token Project: SPL manager with custom Anchor minting limits.
-    5. ClientIQ Hub: Node.js flow automatons with rigid webhook JSON schema validates.
+    1. LONGHEALTH: Healthcare Operations and Hospital Management Platform integrating EMR, billing, pharmacy, and laboratory flows (React.js, Node.js, PostgreSQL).
+    2. ProScore: Real-Time Sports Platform featuring SSE (Server-Sent Events) live streams, NestJS, and PostgreSQL.
+    3. PayLink MiniPay: Wallet-based checkout links built for Celo stablecoins.
+    4. Solana Volume Bot: Automated simulation and liquidity watcher bot integrating Jupiter SDK and Compute Budget program on Solana.
+    5. Solana Token Project: SPL manager with custom Anchor minting limits.
+    6. ClientIQ Hub: Node.js flow automatons with rigid webhook JSON schema validates.
 - Vision: Building innovative technology solutions with real-world impact across Web2 and Web3 ecosystems.
 - Personality: Ambitious, technical, product-focused, venture-minded.
 

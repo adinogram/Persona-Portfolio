@@ -153,7 +153,7 @@ export const Hero = () => {
                 Oluwatosin Joseph
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground font-light max-w-xl">
-                Full-Stack Software Engineer & Blockchain Engineer | <span className="text-primary font-medium">Future Venture Builder</span>
+                Full-Stack Software and Blockchain Engineer | <span className="text-primary font-medium">Future Venture Builder</span>
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@ export const Hero = () => {
               <Award className="w-5 h-5 text-primary opacity-50" />
             </div>
             <p className="text-2xl font-light leading-snug text-white">
-              Currently building skills in <span className="font-bold text-primary">Full-Stack Software Engineering & Blockchain Engineering</span> while creating products with global impact.
+              Currently building skills in <span className="font-bold text-primary">Full-Stack Software and Blockchain Engineering</span> while creating products with global impact.
             </p>
             <div className="space-y-4 pt-4 border-t border-white/5">
               <div className="flex items-center justify-between text-xs font-mono">

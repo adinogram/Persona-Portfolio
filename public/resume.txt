@@ -1,9 +1,9 @@
 OLOYERINDE OLUWATOSIN JOSEPH
-Full-Stack Software Engineer  |  Blockchain Developer
+Full-Stack Software and Blockchain Engineer
 📍 Abuja, Nigeria   📧 d.gramjoseph@gmail.com   📱 +234 9037673964   🔗 linkedin.com/in/oluwatosin-oloyerinde-644736240   github.com/adinogram
 
 PROFESSIONAL SUMMARY
-Full-Stack Software and Blockchain Developer with experience building responsive web applications, backend systems, and blockchain-based solutions across Web2 and Web3 ecosystems. Skilled in JavaScript, TypeScript, React.js, Node.js, Solidity, and modern development workflows, with practical experience developing decentralized applications, integrating APIs, and building scalable digital products.
+Full-Stack Software and Blockchain Engineer with experience building responsive web applications, backend systems, and blockchain-based solutions across Web2 and Web3 ecosystems. Skilled in JavaScript, TypeScript, React.js, Node.js, Solidity, and modern development workflows, with practical experience developing decentralized applications, integrating APIs, and building scalable digital products.
 
 Experienced in collaborating across remote and hybrid environments, contributing to software projects, blockchain education initiatives, crypto communities, and full-stack application development. Passionate about continuous learning, problem-solving, and building innovative technology solutions with real-world impact.
 
@@ -60,6 +60,13 @@ Crypto Communities  |  January 2019 – Present
 •	Collaborated with crypto teams to improve awareness, engagement, and community growth.
 
 SELECTED PROJECTS
+LONGHEALTH  —  Healthcare Operations Platform
+Technologies: React.js, Node.js, Express.js, PostgreSQL, TypeScript, Tailwind CSS
+•	Designed a next-generation Hospital Management Platform to digitize clinical operations, electronic medical records (EMR), billing, and lab workflows.
+•	Built secure multi-role access control structures enforcing patient data isolation and clinical confidentiality compliance.
+•	Engineered live data synchronization layers for instant, millisecond-grade delivery of incoming diagnostic telemetry.
+•	Optimized PostgreSQL read/write locks to manage farmacy inventories in real-time.
+
 ProScore  —  Real-Time Sports Platform  ★ FLAGSHIP
 Technologies: React.js, NestJS, PostgreSQL, Server-Sent Events (SSE), TypeScript
 •	Real-time live score updates using event streaming architecture

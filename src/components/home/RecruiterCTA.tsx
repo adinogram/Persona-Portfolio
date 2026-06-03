@@ -10,7 +10,8 @@ import {
   X,
   MessageSquare
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export const RecruiterCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -75,20 +76,22 @@ export const RecruiterCTA = () => {
                 >
                   <PhoneCall className="w-3 h-3" /> Book Call
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="rounded-xl border-border hover:border-primary gap-2 h-10 text-xs font-mono uppercase tracking-widest"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
+                <a 
+                  href="/resume.txt" 
+                  download="Oloyerinde_Oluwatosin_Joseph_Resume.txt"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "sm" }),
+                    "rounded-xl border-border hover:border-primary gap-2 h-10 text-xs font-mono uppercase tracking-widest flex items-center justify-center font-medium"
+                  )}
                 >
                   <FileText className="w-3 h-3" /> Resume
-                </Button>
+                </a>
               </div>
 
               <div className="flex items-center justify-center gap-6 pt-2 border-t border-border/50">
                 <a href="mailto:d.gramjoseph@gmail.com" className="text-muted-foreground hover:text-primary transition-colors"><Mail className="w-4 h-4" /></a>
-                <a href="https://linkedin.com/in/adinogramtosin" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="w-4 h-4" /></a>
-                <a href="https://github.com/adinogram" className="text-muted-foreground hover:text-primary transition-colors"><Github className="w-4 h-4" /></a>
+                <a href="https://www.linkedin.com/in/oluwatosin-oloyerinde-644736240" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="w-4 h-4" /></a>
+                <a href="https://github.com/adinogram" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github className="w-4 h-4" /></a>
               </div>
             </div>
           </div>
