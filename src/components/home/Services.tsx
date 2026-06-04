@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Code2, ShieldCheck, Zap, Globe2, Cpu, BarChart3 } from "lucide-react";
+import { Code2, ShieldCheck, Zap, Globe2, Cpu, Palette } from "lucide-react";
 
 const services = [
   {
@@ -31,6 +31,12 @@ const services = [
     title: "Software Engineering & Performance",
     description: "Building robust, scalable products, automation tools, and performant web systems, integrated with modern codebase optimizations and fast-load speeds.",
     tags: ["Rust/Typescript", "Automation tools", "Performance Tuning"]
+  },
+  {
+    icon: <Palette className="w-8 h-8" />,
+    title: "UI/UX & Visual Design",
+    description: "Designing high-fidelity user interfaces, seamless interactive user journeys, and elegant minimalist brand graphics to bridge visual beauty with functionality.",
+    tags: ["Figma", "UI/UX Design", "Graphic Design", "Prototyping"]
   }
 ];
 

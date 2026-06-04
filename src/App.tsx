@@ -10,7 +10,6 @@ import { About } from "@/components/home/About";
 import { Journey } from "@/components/home/Journey";
 import { Footer } from "@/components/layout/Footer";
 import { TosinAI } from "@/components/ai/TosinAI";
-import { RecruiterCTA } from "@/components/home/RecruiterCTA";
 import { motion, useScroll, useSpring } from "motion/react";
 
 // Lazy Loaded Sections for Performance
@@ -86,7 +85,6 @@ export default function App() {
       
       {/* Interactive Floating Layers */}
       <TosinAI />
-      <RecruiterCTA />
     </div>
   );
 }

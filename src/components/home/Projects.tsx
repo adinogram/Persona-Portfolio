@@ -94,7 +94,7 @@ sendMatchEvents(@Param('matchId') id: string): Observable<MessageEvent> {
     image: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=2000&auto=format&fit=crop",
     tags: ["React.js", "NestJS", "PostgreSQL", "TypeScript"],
     github: "https://github.com/adinogram/proscore",
-    live: "https://github.com/adinogram"
+    live: "https://pro-score-six.vercel.app/"
   },
   {
     id: "paylink",
