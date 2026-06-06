@@ -16,21 +16,21 @@ const services = [
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "Scalable Backend Systems",
-    description: "Architecting high-performance microservices and APIs capable of handling millions of requests with sub-second latency.",
-    tags: ["Node.js", "Go", "PostgreSQL", "Redis"]
-  },
-  {
-    icon: <Globe2 className="w-8 h-8" />,
-    title: "Full-Stack Architecture",
-    description: "Designing comprehensive software ecosystems that bridge the gap between complex backend logic and polished frontend UI.",
-    tags: ["System Design", "Cloud Infrastructure", "DevOps"]
+    title: "Full-Stack & Backend Architecture",
+    description: "Designing complete system flows, databases, custom high-throughput APIs, and scalable backend services with sub-second latency.",
+    tags: ["Node.js", "Express/NestJS", "PostgreSQL", "System Design"]
   },
   {
     icon: <Cpu className="w-8 h-8" />,
     title: "Software Engineering & Performance",
-    description: "Building robust, scalable products, automation tools, and performant web systems, integrated with modern codebase optimizations and fast-load speeds.",
-    tags: ["Rust/Typescript", "Automation tools", "Performance Tuning"]
+    description: "Building robust, scalable products, custom automation pipelines, and high-performance tools optimized for speed and efficiency.",
+    tags: ["TypeScript", "Rust/Go", "Automation tools", "Performance Tuning"]
+  },
+  {
+    icon: <Globe2 className="w-8 h-8" />,
+    title: "E-Commerce & Digital Platforms",
+    description: "Engineering tailored high-converting stores, checkout flows, customized headless commerce engines, and seamless payment gateway integrations.",
+    tags: ["Custom Storefronts", "Stripe", "Headless Commerce", "Payment Rails"]
   },
   {
     icon: <Palette className="w-8 h-8" />,
